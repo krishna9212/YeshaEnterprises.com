@@ -6,7 +6,7 @@ const Landing = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-orange-100 dark:bg-gray-900 flex mt-[3.5rem] md:mt-16 items-center justify-center h-min-screen p-6">
+    <div className="bg-orange-100 dark:bg-gray-900 flex mt-[4.6rem] md:mt-16 items-center justify-center h-min-screen p-6">
       <div className="bg-orange-600 text-white rounded-lg p-10 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-10 w-full shadow-xl">
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-2xl md:text-5xl font-extrabold leading-snug">
