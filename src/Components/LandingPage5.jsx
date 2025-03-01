@@ -1,7 +1,6 @@
 import React from 'react'
 // import Navigation from './Navigation'
-import bank from "./../assets/Contact us-cuate.png"
-
+import bank from "./../assets/User research-bro.png"
 function Page5() {
   return (
     <div className=' h-min-full w-full '>
@@ -22,7 +21,7 @@ function Page5() {
                   loading="lazy"
                   decoding="async" 
                   className='mt-2 h-min-[180px] md:w-auto h-[170px] md:h-auto w-[100%] object-contain ' />
-                  <div className="blank h-10 bg-blue-100 w-full md:hidden -mt-10 dark:bg-gray-800  "></div>
+                  {/* <div className="blank h-10 bg-blue-200 w-full md:hidden -mt-10 dark:bg-gray-800  "></div> */}
                 </div>
 
             </div>

@@ -1,7 +1,8 @@
 import React from "react";
 import MultiStepForm from "./Form3";
 import { FaCheck } from "react-icons/fa";  // FontAwesome
-import svg from "./../assets/Banknote-rafiki.png"
+import svg from "./../assets/Personal finance-cuate.png"
+
 const LoanAgainstHome = () => {
   return (
     <div className="h-screen w-screen flex flex-col md:flex-row  items-center justify-center">
@@ -18,7 +19,7 @@ const LoanAgainstHome = () => {
                     </span>
                 ))
       }
-      <img src={svg} alt="" className="h-[100%] hidden md:block -ml-8 -mt-5 w-auto  object-cover object-center" />
+      <img src={svg} alt="" className="h-[100%] hidden md:block -ml-8 mt-2 w-auto  object-cover object-center" />
                 </div>
       
             </div>

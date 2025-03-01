@@ -9,8 +9,8 @@ function EMICalculator() {
   const [emi, setEmi] = useState(null);
   const [totalInterest, setTotalInterest] = useState(null);
   const [editField, setEditField] = useState(null); // Track which field is being edited
+  const COLORS = ["#8B5CF6", "#10B981"]; 
 
-  const COLORS = ["#4F46E5", "#14B8A6"]; // Modern color palette
 
   // Automatically calculate EMI when values change
   useEffect(() => {
@@ -45,7 +45,7 @@ function EMICalculator() {
 
   return (
     <>
-    <div className="flex flex-col-reverse  md:flex-row justify-center p-2 items-center md:items-start h-min-screen px-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div className="flex flex-col-reverse py-5  md:flex-row justify-center p-2 items-center md:items-start h-min-screen px-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       {/* Left Side - Controls */}
       <div className="lg:w-1/2 w-full shadow-lg rounded-lg p-[27px] mb-6 lg:mb-0 lg:mr-6 bg-gray-100 dark:bg-gray-800 transition-colors duration-300">
   <h1 className="text-4xl font-extrabold text-center mb-6 bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text">
@@ -199,7 +199,7 @@ function EMICalculator() {
                   maximumFractionDigits: 2,
                 })}
               </p>
-              <p className="text-lg">
+              <p className="text-lg ">
                 <strong>Total Interest Payable:</strong>{" "}
                 ₹{parseFloat(totalInterest).toLocaleString("en-IN", {
                   minimumFractionDigits: 2,

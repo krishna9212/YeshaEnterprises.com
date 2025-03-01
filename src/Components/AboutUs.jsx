@@ -1,10 +1,9 @@
 import React from "react";
-import svgFile from "./../assets/connected-world-animate.svg";
-
+import svgFile from "./../assets/about-us-page-animate.svg";
 const About = () => {
   return (
     <section className="bg-gradient-to-b from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 py-12">
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="container mx-auto px-6 ">
         <div className="flex flex-col-reverse md:flex-row-reverse items-center gap-10">
           {/* Content Section */}
           <div className="text-center md:text-left w-full md:w-1/2">
@@ -39,7 +38,7 @@ const About = () => {
             <img
               src={svgFile}
               alt="Financial Growth"
-              className="w-[80%] md:w-[70%]  drop-shadow-lg"
+              className="w-[100%] md:w-[100%]  drop-shadow-lg"
             />
           </div>
         </div>

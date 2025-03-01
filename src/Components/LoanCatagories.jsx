@@ -129,7 +129,7 @@ function LoanCategories() {
 
       {/* Heading */}
       <div className="flex flex-col w-full">
-        <div className="heading flex md:w-[12%] text-[0.8rem] md:text-[1rem] w-[25%] items-center gap-2 text-[#0290D0] poppins-bold">
+        <div className="heading whitespace-nowrap flex md:w-[12%] text-[0.8rem] md:text-[1rem] w-[25%] items-center gap-2 text-[#0290D0] poppins-bold">
         Our products 
           <div className="line h-[0.725px] md:h-[0.625px] flex-grow bg-[#0290D0]"></div>
         </div>
@@ -139,7 +139,7 @@ function LoanCategories() {
           {categories.map((category) => (
             <div
               key={category.id}
-              className="group bg-blue-100  dark:bg-gray-800 loan-box w-min-full rounded-xl shadow-md flex flex-col justify-between items-center p-1 md:p-6 text-gray-800 dark:text-gray-100 transition-all duration-500 ease-in-out hover:shadow-xl cursor-pointer"
+              className="group bg-blue-100  dark:bg-gray-800 loan-box w-min-full rounded-xl shadow-md flex flex-col justify-between items-center p-1 md:p-8 text-gray-800 dark:text-gray-100 transition-all duration-500 ease-in-out hover:shadow-xl cursor-pointer"
               onClick={() => handleNavigation(category.route)}
             >
               {/* Top Section */}

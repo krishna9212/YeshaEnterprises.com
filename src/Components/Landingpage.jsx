@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from './Navigation';
-import bank from './../assets/pic1.png';
+import bank from './../assets/Team goals-rafiki.png';
+
 
 function Page1() {
   return (
