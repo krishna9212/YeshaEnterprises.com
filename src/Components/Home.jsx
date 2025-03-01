@@ -8,19 +8,20 @@ import Page5 from "./LandingPage5";
 import LoanCategories from "./LoanCatagories";
 import About from "./AboutUs";
 import EMICalculator from "./EmiCalculator";
+import Landing from "./Landing";
 
 const Home = () => {
-  const pages = [<Page1 />, <Page5 />];
+  // const pages = [<Page1 />, <Page5 />];
 
   return (
     <div className="">
       {/* Slider Banner */}
-      <SliderBanner autoPlay={true} interval={4000}>
+      {/* <SliderBanner autoPlay={true} interval={4000}>
         {pages}
-      </SliderBanner>
-
+      </SliderBanner> */}
+      <Landing></Landing>
       {/* Loan Categories */}
-      <LoanCategories />
+      {/* <LoanCategories /> */}
 
       {/* About Section */}
       <About />

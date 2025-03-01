@@ -12,32 +12,9 @@ import LoanImg5 from "./../assets/debit-card.png";
 
 function LoanCategories() {
   const navigate = useNavigate();
-  const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const AlertMessage = ({ message, type = "error", duration = 5000, onClose }) => {
-    const [visible, setVisible] = useState(true);
 
-    useEffect(() => {
-      const timer = setTimeout(() => {
-        setVisible(false);
-        if (onClose) onClose();
-      }, duration);
-
-      return () => clearTimeout(timer);
-    }, [duration, onClose]);
-
-    if (!visible) return null;
-
-    return (
-      <div
-        className={`fixed top-18 right-2 px-6 py-2 rounded-lg text-white shadow-lg text-[0.8rem] md:text-[1rem] z-50 w-[65%] md:w-[20%] text-center 
-          ${type === "success" ? "bg-green-500" : "bg-red-500"}`}
-      >
-        {message}
-      </div>
-    );
-  };
 
   const handleNavigation = (route) => {
     setLoading(true); // Show spinner
@@ -117,8 +94,7 @@ function LoanCategories() {
   
   
   return (
-    <div className="h-min-screen w-full p-5 bg-blue-50 dark:bg-gray-900 overflow-hidden flex flex-col">
-      {errorMessage && <AlertMessage message={errorMessage} onClose={() => setErrorMessage("")} />}
+    <div className="h-min-screen w-full p-5 bg-transparent overflow-hidden flex flex-col">
       
       {/* Loading Spinner */}
       {loading && (
@@ -127,43 +103,42 @@ function LoanCategories() {
         </div>
       )}
 
-      {/* Heading */}
-      <div className="flex flex-col w-full">
-        <div className="heading whitespace-nowrap flex md:w-[12%] text-[0.8rem] md:text-[1rem] w-[25%] items-center gap-2 text-[#0290D0] poppins-bold">
-        Our products 
-          <div className="line h-[0.725px] md:h-[0.625px] flex-grow bg-[#0290D0]"></div>
-        </div>
-
-        {/* Loan Category Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 w-full mt-6 bg-blue-50 dark:bg-gray-900">
-          {categories.map((category) => (
-            <div
-              key={category.id}
-              className="group bg-blue-100  dark:bg-gray-800 loan-box w-min-full rounded-xl shadow-md flex flex-col justify-between items-center p-1 md:p-8 text-gray-800 dark:text-gray-100 transition-all duration-500 ease-in-out hover:shadow-xl cursor-pointer"
-              onClick={() => handleNavigation(category.route)}
-            >
-              {/* Top Section */}
-              <div className="flex w-full flex-col-reverse md:flex-row items-center justify-center gap-1 md:gap-3">
-                <h2 className="text-[0.62rem] w-[100%] md:w-[40%] text-center md:text-[0.8rem] poppins-medium">{category.name}</h2>
-                <img src={category.icon} 
-                alt={category.name} 
-                loading="lazy"
-                decoding="async" 
-                className="h-7.5 p-[1px] md:p-0 md:h-9  object-cover" />
-              </div>
-
-              {/* Bottom Section */}
-              <p className="hidden md:flex text-[0.7rem] text-gray-400 text-center mt-1 px-2">{category.summary}</p>
-
-              {/* Check Eligibility Button */}
-              <button className="text-[#0198D6] poppins-light loan-button hidden md:flex items-center justify-start text-[0.5rem] md:text-[0.7rem] font-medium rounded-lg mt-2 gap-1 transition-all duration-500 ease-in-out opacity-60 group-hover:opacity-100">
-                {category.buttonName}
-                <FaArrowRight className="text-[#0198D6] text-[0.7rem]" />
-              </button>
-            </div>
-          ))}
-        </div>
+        
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-[100%]    mt-6">
+  {categories.map((category) => (
+    <div
+      key={category.id}
+      className="group bg-orange-200 dark:bg-gray-900 loan-box w-full rounded-2xl shadow-lg flex flex-col items-center p-4 md:p-6 transition-all duration-300 ease-in-out hover:shadow-2xl  border border-gray-200 dark:border-gray-700 cursor-pointer"
+      onClick={() => handleNavigation(category.route)}
+    >
+      {/* Icon & Title Section */}
+      <div className="flex flex-col items-center">
+        <img
+          src={category.icon}
+          alt={category.name}
+          loading="lazy"
+          decoding="async"
+          className="h-16 w-18 object-contain transition-transform duration-300 group-hover:rotate-6"
+        />
+        <h2 className="text-[0.8rem] md:text-[1rem] font-semibold text-gray-800 dark:text-gray-100 mt-3">
+          {category.name}
+        </h2>
       </div>
+
+      {/* Summary Text */}
+      <p className="hidden md:block text-[0.75rem] text-gray-500 dark:text-gray-300 text-center mt-2 px-4">
+        {category.summary}
+      </p>
+
+      {/* Action Button */}
+      <button className="mt-4 flex items-center justify-center bg-[#0198D6] text-white text-[0.7rem] md:text-[0.8rem] font-medium px-4 py-2 rounded-full transition-all duration-300 hover:bg-[#0077b6] hover:shadow-md">
+        {category.buttonName}
+        <FaArrowRight className="ml-2 text-[0.9rem]" />
+      </button>
+    </div>
+  ))}
+</div>
+
     </div>
   );
 }

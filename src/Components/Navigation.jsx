@@ -35,7 +35,7 @@ function Navigation() {
   return (
     <>
       
-      <nav className="h-[9%] md:h-[10%] fixed z-50 w-full flex items-center justify-between bg-blue-500 dark:bg-gray-950 dark:text-white transition-all duration-300 px-4 md:px-10 shadow-md">
+      <nav className="h-[9%] md:h-[10%] fixed z-50 w-full flex items-center justify-between bg-orange-500 dark:bg-gray-950 dark:text-white transition-all duration-300 px-4 md:px-10 shadow-md">
         <div className="flex items-center h-full">
           <Link to="/" className="w-full h-full flex items-center"> 
            
@@ -54,7 +54,7 @@ function Navigation() {
               setDarkMode(!darkMode)
               window.location.reload();
             }}
-            className="px-[9px] py-[11.3px] rounded-md transition-all duration-1000 border-[0.4px] border-gray-400 dark:bg-gray-900 dark:hover:bg-transparent hover:bg-blue-600 flex items-center justify-center"
+            className="px-[9px] py-[11.3px] rounded-md transition-all duration-1000 border-[0.4px] border-gray-200 dark:bg-gray-900 dark:hover:bg-transparent hover:bg-orange-600 flex items-center justify-center"
           >
             {darkMode ? (
               <FaSun className="text-gray-200 text-lg" />

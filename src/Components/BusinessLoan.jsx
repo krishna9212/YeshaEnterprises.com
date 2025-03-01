@@ -5,7 +5,7 @@ import svg from "./../assets/Money motivation-bro.png"
 const BusinessLoan = () => {
   return (
     <div className="h-screen w-screen flex flex-col md:flex-row  items-center justify-center">
-      <div className="pcLEFT w-full hidden md:flex mt-10  bg-blue-100 dark:bg-gray-800 text-black dark:text-white justify-center overflow-hidden md:w-1/2 md:h-full items-center  p-10  ">
+      <div className="pcLEFT w-full hidden md:flex mt-10  bg-orange-200 dark:bg-gray-800 text-black dark:text-white justify-center overflow-hidden md:w-1/2 md:h-full items-center  p-10  ">
                              <div className="banner md:h-[70%] flex flex-col ">
                                <h1 className="poppins-semibold text-2xl">Business Loan</h1>
                                <div className="div flex w-full h-full flex-col   gap-3   mt-3">
@@ -23,7 +23,7 @@ const BusinessLoan = () => {
                        
                              </div>
                              </div>
-            <div className="phoneLEFT w-full md:hidden flex mt-20  bg-blue-100 dark:bg-gray-800 text-black dark:text-white justify-center overflow-hidden  items-center  p-5  ">
+            <div className="phoneLEFT w-full md:hidden flex mt-20  bg-orange-200 dark:bg-gray-800 text-black dark:text-white justify-center overflow-hidden  items-center  p-5  ">
             <div className="banner md:h-[70%] flex flex-col ">
               <h1 className="poppins-semibold text-[1.1rem]  whitespace-nowrap">Business Loan</h1>
               {

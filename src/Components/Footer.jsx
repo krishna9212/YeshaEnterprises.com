@@ -4,24 +4,19 @@ import logo from "./../assets/LLoGGO.png";
 function Footer() {
   return (
     <>
-    <div className="p-6  bg-blue-500   dark:bg-gray-800 text-gray-100 dark:text-gray-300 md:max-w-full md:px-5">
+    <div className="p-6  bg-orange-500   dark:bg-gray-800 text-gray-100 dark:text-gray-300 md:max-w-full md:px-5">
       <div className="flex flex-col md:flex-row justify-between gap-6 ">
         {/* Logo Section */}
         <div className="sm:col-span-2">
           <a href="/" aria-label="Go home" title="Company">
-            <img src={logo} className="h-18 p-1 -mt-2 -ml-2 w-auto" alt="Company Logo" />
+            <img src={logo} className="h-20 p-1 -mt-2 -ml-2 w-auto" alt="Company Logo" />
           </a>
         </div>
         
         {/* Footer Sections */}
         <div className="flex flex-col md:flex-row gap-6 md:gap-10">
 
-          {/* Useful Links */}
-          <FooterSection title="Useful Links">
-            {['Home','About Us',  'Our Products', 'EMI Calculator'].map((link) => (
-              <FooterLink key={link} text={link} href="/" />
-            ))}
-          </FooterSection>
+          
 
           {/* Contacts */}
           <FooterSection title="Contacts">
@@ -53,15 +48,10 @@ const FooterSection = ({ title, children }) => (
   </div>
 );
 
-const FooterLink = ({ text, href }) => (
-  <li>
-    <a href={href} className="hover:text-gray-300 dark:hover:text-gray-500">{text}</a>
-  </li>
-);
 
 const ContactInfo = ({ label, value, link }) => (
   <div className="flex gap-0.5">
-    <p className="mr-1 text-gray-50">{label}</p>
+    <p className="mr-1 text-white">{label}</p>
     <a href={link} className="transition-colors duration-300 text-gray-300 ">{value}</a>
   </div>
 );
