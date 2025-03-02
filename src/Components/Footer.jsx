@@ -1,70 +1,67 @@
-import React from 'react';
+import React from "react";
 import logo from "./../assets/LLoGGO.png";
 
-function Footer() {
+const Footer = () => {
   return (
-    <>
-    <div className="p-6  bg-orange-500   dark:bg-gray-800 text-gray-100 dark:text-gray-300 md:max-w-full md:px-5">
-      <div className="flex flex-col md:flex-row justify-between gap-6 ">
-        {/* Logo Section */}
-        <div className="sm:col-span-2">
-          <a href="/" aria-label="Go home" title="Company">
-            <img src={logo} className="h-20 p-1 -mt-2 -ml-2 w-auto" alt="Company Logo" />
-          </a>
-        </div>
-        
-        {/* Footer Sections */}
-        <div className="flex flex-col md:flex-row gap-6 md:gap-10">
+    <footer className="bg-orange-600 dark:bg-gray-800 text-gray-100 dark:text-gray-300 py-8 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <a href="/" aria-label="Go home" title="Company" className="flex items-center">
+          <img src={logo} className="h-30 md:h-20 mb-8  w-auto transition-transform duration-300 hover:scale-105" alt="Company Logo" />
+        </a>
 
-          
-
-          {/* Contacts */}
+        <div className="flex flex-col md:flex-row gap-14 md:gap-12 text-center md:text-left">
           <FooterSection title="Contacts">
             <ContactInfo label="Phone:" value="+91 98998 82204" link="tel:+91 98998 82204" />
             <ContactInfo label="Email:" value="Yeshaenterprise2022@gmail.com" link="mailto:Yeshaenterprise2022@gmail.com" />
             <ContactInfo label="Address:" value="E 37 sector 3 Noida UP" link="https://maps.app.goo.gl/eEvP73qWoaFSBEW87" />
           </FooterSection>
 
-          {/* Social */}
-          <FooterSection title="Social">
+          <FooterSection title="Follow Us">
             <SocialIcons />
-            <p className="mt text-sm text-gray-200">Follow our social media for updates</p>
-
+            <p className="text-sm text-gray-300">Stay updated with our latest news</p>
           </FooterSection>
         </div>
       </div>
 
-      
-    </div>
-    </>
-
+      <div className="border-t border-gray-500 mt-6 pt-4 text-center text-sm text-gray-200">
+        &copy; {new Date().getFullYear()} Yesha Enterprise. All rights reserved.
+      </div>
+    </footer>
   );
-}
+};
 
 const FooterSection = ({ title, children }) => (
-  <div className="space-y-2 text-sm">
-    <p className="text-base font-bold tracking-wide text-white dark:text-gray-200">{title}</p>
-    <ul className="space-y-1">{children}</ul>
+  <div className="space-y-2">
+    <p className="text-lg font-semibold text-white  dark:text-white">{title}</p>
+    <div>{children}</div>
   </div>
 );
-
 
 const ContactInfo = ({ label, value, link }) => (
-  <div className="flex gap-0.5">
-    <p className="mr-1 text-white">{label}</p>
-    <a href={link} className="transition-colors duration-300 text-gray-300 ">{value}</a>
+  <div className="flex gap-1 text-gray-300 hover:text-orange-100 transition duration-300">
+    <p className="font-medium">{label}</p>
+    <a href={link} className="hover:underline">{value}</a>
   </div>
 );
 
-const SocialIcons = () => (
-  <div className="flex items-center mt-1 space-x-3">
-    {['facebook', 'instagram', 'linkedin'].map((platform) => (
-      <a key={platform} href="/" className="text-gray-300 transition-colors duration-300 hover:text-gray-200">
-        <SocialIcon platform={platform} />
-      </a>
-    ))}
-  </div>
-);
+const SocialIcons = () => {
+  const socialLinks = {
+    facebook: "https://facebook.com",
+    instagram: "https://instagram.com",
+    linkedin: "https://linkedin.com",
+  };
+
+  return (
+    <div className="flex justify-center md:justify-start gap-4 mt-2">
+      {Object.entries(socialLinks).map(([platform, url]) => (
+        <a key={platform} href={url} target="_blank" rel="noopener noreferrer"
+          className="p-2 rounded-full bg-orange-500 dark:bg-gray-700 hover:bg-orange-700 dark:hover:bg-gray-800 transition-transform transform hover:scale-110">
+          <SocialIcon platform={platform} />
+        </a>
+      ))}
+    </div>
+  );
+};
 
 const SocialIcon = ({ platform }) => {
   const icons = {
@@ -75,8 +72,7 @@ const SocialIcon = ({ platform }) => {
     linkedin:
       "M20.45 2H3.55C2.7 2 2 2.7 2 3.55v16.9C2 21.3 2.7 22 3.55 22h16.9c.85 0 1.55-.7 1.55-1.55V3.55C22 2.7 21.3 2 20.45 2zM8.3 18.1H5.2V9.3h3.1v8.8zM6.75 8c-.98 0-1.77-.8-1.77-1.77s.79-1.77 1.77-1.77S8.52 5.25 8.52 6.23C8.52 7.2 7.73 8 6.75 8zm11.35 10.1h-3.1v-4.8c0-1.1-.02-2.5-1.53-2.5s-1.76 1.2-1.76 2.4v4.9H9.6V9.3h2.97v1.2h.04c.41-.78 1.41-1.6 2.91-1.6 3.11 0 3.69 2 3.69 4.5v4.8z",
   };
-  return <svg viewBox="0 0 24 24" fill="currentColor" className="h-8"><path d={icons[platform]} /></svg>;
+  return <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 text-gray-100 dark:text-orange-400"> <path d={icons[platform]} /></svg>;
 };
-
 
 export default Footer;

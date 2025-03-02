@@ -52,7 +52,6 @@ function Navigation() {
           <button
             onClick={() => {
               setDarkMode(!darkMode)
-              window.location.reload();
             }}
             className="px-[9px] py-[11.3px] rounded-md transition-all duration-1000 border-[0.4px] border-gray-200 dark:bg-gray-900 dark:hover:bg-transparent hover:bg-orange-600 flex items-center justify-center"
           >
