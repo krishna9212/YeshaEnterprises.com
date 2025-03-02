@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-gray-500 mt-6 pt-4 text-center text-sm text-gray-200">
+      <div className="border-t poppins-thin border-gray-300 dark:border-gray-600  mt-6 pt-4 text-center text-sm text-gray-100">
         &copy; {new Date().getFullYear()} Yesha Enterprise. All rights reserved.
       </div>
     </footer>
@@ -32,13 +32,13 @@ const Footer = () => {
 
 const FooterSection = ({ title, children }) => (
   <div className="space-y-2">
-    <p className="text-lg font-semibold text-white  dark:text-white">{title}</p>
+    <p className="text-lg poppins-semibold text-white  dark:text-white">{title}</p>
     <div>{children}</div>
   </div>
 );
 
 const ContactInfo = ({ label, value, link }) => (
-  <div className="flex gap-1 text-gray-300 hover:text-orange-100 transition duration-300">
+  <div className="flex gap-1 text-gray-300 poppins-light hover:text-orange-100 transition duration-300">
     <p className="font-medium">{label}</p>
     <a href={link} className="">{value}</a>
   </div>
@@ -55,7 +55,7 @@ const SocialIcons = () => {
     <div className="flex justify-center md:justify-start gap-4 mt-2">
       {Object.entries(socialLinks).map(([platform, url]) => (
         <a key={platform} href={url} target="_blank" rel="noopener noreferrer"
-          className="p-2 rounded-full bg-orange-500 dark:bg-gray-700 hover:bg-orange-700 dark:hover:bg-gray-800 transition-transform transform hover:scale-110">
+          className="p-2 rounded-full bg-orange-500  dark:bg-gray-700 hover:bg-orange-700 dark:hover:bg-gray-800 transition-transform transform hover:scale-110">
           <SocialIcon platform={platform} />
         </a>
       ))}

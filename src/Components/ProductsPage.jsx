@@ -11,10 +11,10 @@ function ProductsPage() {
         <div className="bg-orange-600 dark:bg-gray-800 text-white w-[90%] rounded-lg p-10 flex flex-col md:flex-row  items-center">
           {/* Text Content */}
           <div className=" md:-mt-30 md:ml-20 text-center md:text-left space-y-4">
-            <h1 className="text-3xl md:text-5xl font-bold leading-snug">
-              <span className="text-yellow-300 ">Our Solutions </span>
+            <h1 className="text-[2rem] md:text-5xl poppins-bold  leading-snug">
+              <span className="text-yellow-300 -ml-2">Our Solutions </span>
             </h1>
-            <p className="text-sm md:text-base font-medium  ">
+            <p className="text-[0.9rem] md:text-base poppins-medium ">
               We thank you for choosing {" "}<b className="text-yellow-300">Yesha Enterprises</b> as your preferred guide. 
            <br />
             We assure you the best in-class service through the entire process.

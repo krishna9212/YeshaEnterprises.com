@@ -19,7 +19,7 @@ const HorizontalLogoSlider = () => {
   return (
     <div className="relative bg-[orange-100] w-full py-6 mx-auto">
       {/* Section Title */}
-      <h2 className="text-2xl font-semibold poppins-semibold text-center text-gray-800 dark:text-gray-200 mb-8">
+      <h2 className="text-2xl poppins-semibold text-center text-gray-800 dark:text-gray-200 mb-8">
         Our Banking Partners
       </h2>
 

@@ -3,9 +3,9 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { Slider, Typography, TextField } from "@mui/material";
 
 function EMICalculator() {
-  const [amount, setAmount] = useState(100000); // Default values
-  const [interestRate, setInterestRate] = useState(10);
-  const [tenure, setTenure] = useState(5);
+  const [amount, setAmount] = useState(1000); // Default values
+  const [interestRate, setInterestRate] = useState(9);
+  const [tenure, setTenure] = useState(10);
   const [emi, setEmi] = useState(null);
   const [totalInterest, setTotalInterest] = useState(null);
   const [editField, setEditField] = useState(null); // Track which field is being edited
@@ -48,11 +48,11 @@ function EMICalculator() {
     <div className="flex flex-col-reverse py-5  md:flex-row justify-center p-2 items-center md:items-start h-min-screen px-4 bg-orange-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       {/* Left Side - Controls */}
       <div className="lg:w-1/2  w-full shadow-lg py-8 md:py-9 rounded-lg p-[27px] mb-6 lg:mb-0 lg:mr-6 bg-orange-50 dark:bg-gray-800 transition-colors duration-300">
-  <h1 className="text-4xl font-extrabold text-center mb-6 text-orange-500 dark:text-gray-200">
+  <h1 className="text-4xl poppins-semibold text-center mb-6 text-orange-500 dark:text-gray-200">
     EMI Calculator
   </h1>
   <div className="mb-6">
-    <Typography variant="h6" className="mb-2 text-black dark:text-gray-200">
+    <Typography variant="h6" className="mb-2 poppins-bold text-black dark:text-gray-200">
       Loan Amount (₹)
     </Typography>
     {editField === "amount" ? (
@@ -69,7 +69,7 @@ function EMICalculator() {
     ) : (
       <div
         onClick={() => setEditField("amount")}
-        className="text-center mt-2 text-[0.97rem] cursor-pointer text-black dark:text-gray-200"
+        className="text-center poppins-extralight mt-2 text-[0.97rem] cursor-pointer text-black dark:text-gray-200"
       >
         ₹{amount.toLocaleString()}
       </div>
@@ -90,7 +90,7 @@ function EMICalculator() {
   </div>
 
   <div className="mb-6">
-    <Typography variant="h6" className="mb-2 text-black dark:text-gray-200">
+    <Typography variant="h6" className="mb-2 poppins-extralight text-black poppins-light dark:text-gray-200">
       Annual Interest Rate (%)
     </Typography>
     {editField === "interestRate" ? (
@@ -108,7 +108,7 @@ function EMICalculator() {
     ) : (
       <div
         onClick={() => setEditField("interestRate")}
-        className="text-center mt-2 text-[0.97rem] cursor-pointer text-black dark:text-gray-200"
+        className="text-center mt-2 poppins-extralight text-[0.97rem] cursor-pointer text-black dark:text-gray-200"
       >
         {interestRate}%
       </div>
@@ -124,7 +124,7 @@ function EMICalculator() {
   </div>
 
   <div className="mb-6">
-    <Typography variant="h6" className="mb-2 text-black dark:text-gray-200">
+    <Typography variant="h6" className="mb-2 poppins-extralight text-black dark:text-gray-200">
       Tenure (Years)
     </Typography>
     {editField === "tenure" ? (
@@ -142,7 +142,7 @@ function EMICalculator() {
     ) : (
       <div
         onClick={() => setEditField("tenure")}
-        className="text-center mt-2 text-[0.97rem] cursor-pointer text-black dark:text-gray-200"
+        className="text-center poppins-extralight mt-2 text-[0.97rem] cursor-pointer text-black dark:text-gray-200"
       >
         {tenure} Years
       </div>
@@ -160,8 +160,8 @@ function EMICalculator() {
 
 
       {/* Right Side - Pie Chart */}
-      <div className="lg:w-1/2 w-[100%] mb-5 py-8 md:py-[2.35rem] md:mb-0 shadow-lg rounded-lg  md:p-9 flex flex-col items-center bg-orange-50 dark:bg-gray-800 transition-colors duration-300">
-        <h2 className="text-4xl pt-2 font-extrabold text-center mb-6 text-orange-500 dark:text-gray-200 ">
+      <div className="lg:w-1/2 w-[100%] mb-5 py-8  md:py-[2.37rem] md:mb-0 shadow-lg rounded-lg  md:p-9 flex flex-col items-center bg-orange-50 dark:bg-gray-800 transition-colors duration-300">
+        <h2 className="text-4xl poppins-semibold pt-2 font-extrabold text-center mb-6 text-orange-500 dark:text-gray-200 ">
           EMI Breakdown
         </h2>
         <ResponsiveContainer width="100%" height={300}>
@@ -192,14 +192,14 @@ function EMICalculator() {
         <div className="text-center">
           {emi && (
             <>
-              <p className="text-lg">
+              <p className="text-lg poppins-light ">
                 <strong>EMI per month:</strong>{" "}
                 ₹{parseFloat(emi).toLocaleString("en-IN", {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                 })}
               </p>
-              <p className="text-lg ">
+              <p className="text-lg  poppins-light">
                 <strong>Total Interest Payable:</strong>{" "}
                 ₹{parseFloat(totalInterest).toLocaleString("en-IN", {
                   minimumFractionDigits: 2,
