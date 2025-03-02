@@ -1,24 +1,33 @@
 import React from "react";
-import img from "./../assets/pray.png";
+import img from "./../assets/growth-curve-animate.svg";
 import LoanCategories from "./LoanCatagories";
 
 function ProductsPage() {
+  
   return (
-    <div className="flex flex-col items-center mt-[3rem] p-10 min-h-screen bg-orange-100 dark:bg-gray-900">
-      <div className="bg-orange-500 dark:bg-gray-800 text-white text-center p-10 rounded-lg w-full shadow-lg">
-        <img
-          alt="Icon of hands in prayer position"
-          className="mx-auto mb-4 w-12 h-12"
-          src={img}
-        />
-        <h1 className="text-3xl font-bold mb-2 poppins-semibold">Our Solutions</h1>
-        <p className="text-lg poppins-regular dark:text-gray-300">
-          We thank you for choosing yesha enterprises as your preferred guide.
-        </p>
-        <p className="text-lg poppins-regular dark:text-gray-300">
-          We assure you the best in-class service through the entire process.
-        </p>
+    <div className="flex flex-col mt-[6rem] md:mt-[4.2rem] items-center w-full min-h-screen p-2 md:p-6 bg-orange-100 dark:bg-gray-900">
+      {/* Hero Section */}
+      <div className="flex items-center justify-center w-full ">
+        <div className="bg-orange-600 dark:bg-gray-800 text-white w-[90%] rounded-lg p-10 flex flex-col md:flex-row  items-center">
+          {/* Text Content */}
+          <div className=" md:-mt-30 md:ml-20 text-center md:text-left space-y-4">
+            <h1 className="text-3xl md:text-5xl font-bold leading-snug">
+              <span className="text-yellow-300 ">Our Solutions </span>
+            </h1>
+            <p className="text-sm md:text-base font-medium  ">
+              We thank you for choosing {" "}<b className="text-yellow-300">Yesha Enterprises</b> as your preferred guide. 
+           <br />
+            We assure you the best in-class service through the entire process.
+            </p>
+            
+          </div>
+          {/* Image */}
+          <div className="flex-1 flex justify-center">
+            <img src={img} alt="Growth Curve" className="w-[120%] md:w-[70%]" />
+          </div>
+        </div>
       </div>
+      {/* Loan Categories Section */}
       <LoanCategories />
     </div>
   );
