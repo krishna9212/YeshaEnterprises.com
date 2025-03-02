@@ -11,9 +11,9 @@ function ProductsPage() {
           className="mx-auto mb-4 w-12 h-12"
           src={img}
         />
-        <h1 className="text-3xl font-bold mb-2 poppins-semibold">Loans</h1>
+        <h1 className="text-3xl font-bold mb-2 poppins-semibold">Our Solutions</h1>
         <p className="text-lg poppins-regular dark:text-gray-300">
-          We thank you for choosing Pro Fincare as your preferred guide.
+          We thank you for choosing yesha enterprises as your preferred guide.
         </p>
         <p className="text-lg poppins-regular dark:text-gray-300">
           We assure you the best in-class service through the entire process.

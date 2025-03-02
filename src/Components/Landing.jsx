@@ -18,7 +18,7 @@ const Landing = () => {
             Apply for a loan now and get a chance to win a Gold Coin.
           </p>
           <p className="mt-3  text-xs poppins-light md:text-base">
-            Pro Fincare helps you find the best loan alternatives with top consultants and an easy process, all from the comfort of your home.
+          <b className="text-[#FFDF20] poppins-semibold">yesha enterprises</b> helps you find the best loan alternatives with top consultants and an easy process, all from the comfort of your home.
           </p>
           <button 
             className="mt-6 bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105"

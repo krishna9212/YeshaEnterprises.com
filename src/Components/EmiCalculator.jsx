@@ -47,7 +47,7 @@ function EMICalculator() {
     <>
     <div className="flex flex-col-reverse py-5  md:flex-row justify-center p-2 items-center md:items-start h-min-screen px-4 bg-orange-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       {/* Left Side - Controls */}
-      <div className="lg:w-1/2  w-full shadow-lg py-8 md:py-7 rounded-lg p-[27px] mb-6 lg:mb-0 lg:mr-6 bg-orange-50 dark:bg-gray-800 transition-colors duration-300">
+      <div className="lg:w-1/2  w-full shadow-lg py-8 md:py-9 rounded-lg p-[27px] mb-6 lg:mb-0 lg:mr-6 bg-orange-50 dark:bg-gray-800 transition-colors duration-300">
   <h1 className="text-4xl font-extrabold text-center mb-6 text-orange-500 dark:text-gray-200">
     EMI Calculator
   </h1>
