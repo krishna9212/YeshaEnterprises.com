@@ -436,11 +436,7 @@ const MultiStepForm = () => {
         {step === 5 && (
   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
     <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Select Loan Amount</h2>
-    {[
-      "Below ₹10K",
-      "₹10K - ₹25K",
-      "₹25K - ₹50K",
-    ].map((range) => (
+    {["Below ₹10k", "₹10k - ₹20k", "₹20k - ₹30k","₹30k - ₹40k", "Above ₹40k"].map((range) => (
       <div
         key={range}
         className={`p-4 border dark:border-gray-500 border-gray-300 dark:text-white rounded cursor-pointer transition mt-2 ${

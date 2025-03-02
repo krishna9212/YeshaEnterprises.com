@@ -1,76 +1,38 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom"; // Import useLocation
+import { Link } from "react-router-dom";
 import { FaSun, FaMoon } from "react-icons/fa";
 import logo from "./../assets/LLoGGO.png";
 
 function Navigation() {
-  const [darkMode, setDarkMode] = useState(
-    () => localStorage.getItem("theme") === "dark" ||
-          (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)
-  );
+  // Get initial theme from localStorage or system preference
+  const getInitialTheme = () => {
+    const storedTheme = localStorage.getItem("theme");
+    return storedTheme ? storedTheme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+  };
 
-  const [loading, setLoading] = useState(false); // Loading state
+  const [darkMode, setDarkMode] = useState(getInitialTheme);
 
-  const location = useLocation();
-
+  // Apply theme change when darkMode state updates
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
+    document.documentElement.classList.toggle("dark", darkMode);
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
-  
-
-  useEffect(() => {
-    if (location.pathname === "/") {
-      setLoading(true);
-      setTimeout(() => setLoading(false), 500);
-    }
-  }, [location.pathname]);
-
   return (
-    <>
-      
-      <nav className="h-[9%] md:h-[10%] fixed z-50 w-full flex items-center justify-between bg-orange-500 dark:bg-gray-950 dark:text-white transition-all duration-300 px-4 md:px-10 shadow-md">
-        <div className="flex items-center h-full">
-          <Link to="/" className="w-full h-full flex items-center"> 
-           
-        
-          <img
-          src={logo}// Switch logo based on dark mode
-          alt="LoanKarade"
-          className="h-[60%] md:h-16 w-auto transition-all duration-300"
-        />
-          </Link>
-        </div>
+    <nav className="fixed top-2 left-1/2 transform opacity-[97%]   -translate-x-1/2  w-[98%] h-20 md:h-18 px-6 md:px-8 flex items-center justify-between rounded-full bg-orange-500 dark:bg-gray-950 dark:text-white shadow-md z-50 transition-all duration-300">
+      {/* Logo */}
+      <Link to="/" className="flex items-center">
+        <img src={logo} alt="LoanKarade" className="h-14  w-auto transition-all duration-300" />
+      </Link>
 
-        <div className="flex items-center space-x-3 md:space-x-6 pt-2">
-          <button
-            onClick={() => {
-              setDarkMode(!darkMode)
-            }}
-            className="px-[9px] py-[11.3px] rounded-md transition-all duration-1000 border-[0.4px] border-gray-200 dark:bg-gray-900 dark:hover:bg-transparent hover:bg-orange-600 flex items-center justify-center"
-          >
-            {darkMode ? (
-              <FaSun className="text-gray-200 text-lg" />
-            ) : (
-              <FaMoon className="text-gray-200 text-lg" />
-            )}
-          </button>
-
-          
-        </div>
-      </nav>
-
-     
-
-     
-
-      </>
+      {/* Theme Toggle Button */}
+      <button
+        onClick={() => setDarkMode((prev) => !prev)}
+        className="p-3 rounded-full border border-gray-300 dark:bg-gray-950 dark:hover:bg-black hover:bg-orange-600 transition-all duration-300"
+      >
+        {darkMode ? <FaSun className="text-gray-200 text-lg" /> : <FaMoon className="text-gray-200 text-lg" />}
+      </button>
+    </nav>
   );
 }
 

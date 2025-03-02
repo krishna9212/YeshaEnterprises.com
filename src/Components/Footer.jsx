@@ -40,7 +40,7 @@ const FooterSection = ({ title, children }) => (
 const ContactInfo = ({ label, value, link }) => (
   <div className="flex gap-1 text-gray-300 hover:text-orange-100 transition duration-300">
     <p className="font-medium">{label}</p>
-    <a href={link} className="hover:underline">{value}</a>
+    <a href={link} className="">{value}</a>
   </div>
 );
 
