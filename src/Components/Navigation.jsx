@@ -19,7 +19,7 @@ function Navigation() {
   }, [darkMode]);
 
   return (
-    <nav className="fixed top-2 left-1/2 transform opacity-[97%]   -translate-x-1/2  w-[98%] h-20 md:h-18 px-6 md:px-8 flex items-center justify-between rounded-full bg-orange-500 dark:bg-gray-950 dark:text-white shadow-md z-50 transition-all duration-300">
+    <nav className="fixed top-2 left-1/2 transform opacity-[97%]   -translate-x-1/2  w-[98%] h-18 md:h-16 px-6 md:px-8 flex items-center justify-between rounded-full bg-orange-500 dark:bg-gray-950 dark:text-white shadow-md z-50 transition-all duration-300">
       {/* Logo */}
       <Link to="/" className="flex items-center">
         <img src={logo} alt="LoanKarade" className="h-14  w-auto transition-all duration-300" />
