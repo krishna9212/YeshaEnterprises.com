@@ -34,7 +34,7 @@ const HorizontalLogoSlider = () => {
           logo ? ( // Only render if the logo exists
             <div
               key={index}
-              className="w-[350px] h-[100px] flex justify-center items-center bg-white p-2 rounded-md shadow-md"
+              className="w-[4000px] h-[120px] flex justify-center items-center bg-white  p-2 rounded-md shadow-md"
             >
               <img
                 src={logo}

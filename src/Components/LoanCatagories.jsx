@@ -120,18 +120,18 @@ function LoanCategories() {
           decoding="async"
           className="h-16 w-18 object-contain transition-transform duration-300 group-hover:rotate-6"
         />
-        <h2 className="text-[0.8rem] md:text-[1rem] font-semibold text-gray-800 dark:text-gray-100 mt-3">
+        <h2 className="text-[0.9rem] md:text-[1rem] font-bold text-gray-800 dark:text-gray-100 mt-3">
           {category.name}
         </h2>
       </div>
 
       {/* Summary Text */}
-      <p className="hidden md:block text-[0.75rem] text-gray-500 dark:text-gray-300 text-center mt-2 px-4">
+      <p className=" text-[0.70rem] whitespace-nowrap poppins-regular text-gray-500 dark:text-gray-300 text-center mt-2 px-4">
         {category.summary}
       </p>
 
       {/* Action Button */}
-      <button className="mt-4 flex items-center justify-center bg-[#0198D6] text-white text-[0.7rem] md:text-[0.8rem] font-medium px-4 py-2 rounded-full transition-all duration-300 hover:bg-[#0077b6] hover:shadow-md">
+      <button className="mt-4 flex  items-center justify-center bg-[#0198D6] text-white text-[0.7rem] md:text-[0.8rem] font-medium px-4 py-2 rounded-full transition-all duration-300 hover:bg-[#0077b6] hover:shadow-md">
         {category.buttonName}
         <FaArrowRight className="ml-2 text-[0.9rem]" />
       </button>
