@@ -4,7 +4,6 @@ import { FaArrowRight } from "react-icons/fa";
 import PersonalLoan from "./../assets/PersonalLoan.png";
 import MicroLoan from "./../assets/Loann.png";
 import LoanImg from "./../assets/assets.png";
-import LoanImg2 from "./../assets/car-loan.png";
 import LoanImg6 from "./../assets/car-loan (1).png";
 import LoanImg3 from "./../assets/Loan3.png";
 import LoanImg4 from "./../assets/loan.png";
@@ -76,20 +75,13 @@ function LoanCategories() {
     },
     {
       id: 6,
-      name: "Used Car Loan",
-      icon: LoanImg2,
-      summary: "Affordable loans for your dream car.",
-      buttonName: "Apply Now",
-      route: "/Used-Car-Loan",
-    },
-    {
-      id: 7,
       name: "Car Loan",
       icon: LoanImg6,
       summary: "Own your car with tailored loan offers.",
       buttonName: "Apply Now",
       route: "/Car-Loan",
     },
+    
   ];
   
   

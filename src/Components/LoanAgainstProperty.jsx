@@ -1,5 +1,5 @@
 import React from "react";
-import MultiStepForm from "./Form3";
+import MultiStepForm from "./Form6";
 import { FaCheck } from "react-icons/fa";  // FontAwesome
 import svg from "./../assets/Personal finance-cuate.png"
 

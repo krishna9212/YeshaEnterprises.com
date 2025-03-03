@@ -11,7 +11,6 @@ import BusinessLoan from "./Components/BusinessLoan";
 import CreditCard from "./Components/CreditCard";
 import HomeLoan from "./Components/HomeLoan";
 import LoanAgainstProperty from "./Components/LoanAgainstProperty";
-import UsedCarLoan from "./Components/UsedCarLoan";
 import CarLoan from "./Components/CarLoan";
 import ProductsPage from "./Components/ProductsPage";
 import NotFound from "./Components/NotFound"; // Handles 404 errors
@@ -38,7 +37,6 @@ function App() {
             <Route path="/credit-card" element={<CreditCard />} />
             <Route path="/home-loan" element={<HomeLoan />} />
             <Route path="/loan-against-property" element={<LoanAgainstProperty />} />
-            <Route path="/used-car-loan" element={<UsedCarLoan />} />
             <Route path="/car-loan" element={<CarLoan />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

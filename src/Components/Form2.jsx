@@ -135,7 +135,7 @@ const MultiStepForm = () => {
       <div className="w-full max-w-md md:mt-10 mb-6">
         <div className="relative w-full bg-gray-300 h-[1px] rounded-full">
           <div
-            className="absolute h-[1px] bg-blue-500 rounded-full transition-all"
+            className="absolute h-[1px] bg-orange-500 rounded-full transition-all"
             style={{ width: `${(step - 1) * 20}%` }}
           ></div>
         </div>

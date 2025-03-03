@@ -1,5 +1,5 @@
 import React from "react";
-import MultiStepForm from "./Form2";
+import MultiStepForm from "./Form7";
 import { FaCheck } from "react-icons/fa";  // FontAwesome
 import svg from "./../assets/Car finance-rafiki.png"
 const CarLoan = () => {
@@ -7,7 +7,7 @@ const CarLoan = () => {
     <div className="h-screen w-screen flex flex-col md:flex-row  items-center justify-center">
      <div className="pcLEFT w-full hidden md:flex  bg-orange-200 dark:bg-gray-800 text-black dark:text-white justify-center overflow-hidden md:w-1/2 md:h-full items-center">
            <div className="banner md:h-[70%] flex flex-col ">
-             <h1 className="poppins-semibold text-2xl">Micro Loan(under 50K)</h1>
+             <h1 className="poppins-semibold text-2xl">Car Loan</h1>
              <div className="div flex w-full h-full flex-col   gap-3   mt-3">
      
              {

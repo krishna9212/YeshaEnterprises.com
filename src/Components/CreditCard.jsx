@@ -1,5 +1,5 @@
 import React from "react";
-import MultiStepForm from "./Form3";
+import MultiStepForm from "./Form4";
 import { FaCheck } from "react-icons/fa";  // FontAwesome
 import svg from "./../assets/Credit assesment-bro.png"
 const CreditCard = () => {
