@@ -28,69 +28,51 @@ const MultiStepForm = () => {
     CatagoryOfBusiness: storedData.CatagoryOfBusiness || "",
     TotalEmiYouPayPerMonth: storedData.TotalEmiYouPayPerMonth || "",
   });
-
+  
   const handleChange = (e) => {
     const { name, value, type } = e.target;
     const newValue = type === "number" && value !== "" ? Number(value) : value.trim();
-
+    
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: newValue,
     }));
   };
-
-  const submit = (e) => {
-    e.preventDefault();
   
-    if (!formData.name.trim() || !formData.email.trim()) {
-      alert("❌ Please fill required fields.");
-      return;
-    }
+  const [result, setResult] = useState("");
+  const submit = async (event) => {
+    event.preventDefault();
+    setResult("Sending...");
   
-    let emailData = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone || "N/A",
-      address: formData.address || "N/A",
-      city: formData.city || "N/A",
-      state: formData.state || "N/A",
-      gender: formData.gender || "N/A",
-      employmentType: formData.employmentType || "N/A",
-      grossIncome: formData.grossIncome || "N/A",
-      loanAmount: formData.loanAmount || "N/A",
-      TotalEmiYouPayPerMonth: formData.TotalEmiYouPayPerMonth || "N/A",
+    // Append access key and credit card request to the formData object
+    const payload = {
+      ...formData,
+      access_key: "92fabc3a-fd92-4999-a6ed-0de78cb57c94",
+      request: "NEED A LOAN",
     };
   
-    let templateID = "";
-  
-    if (formData.employmentType === "salaried") {
-      emailData.company = formData.company || "N/A";
-      emailData.PositionInCompany = formData.PositionInCompany || "N/A";
-      templateID = "template_efb60k3"; // Template for salaried employees
-    } else if (formData.employmentType === "business") {
-      emailData.businessName = formData.businessName || "N/A";
-      emailData.CatagoryOfBusiness = formData.CatagoryOfBusiness || "N/A";
-      templateID = "template_0f3x0wf"; // Template for business owners
-    } else {
-      alert("❌ Invalid employment type.");
-      return;
-    }
-  
-    emailjs
-      .send("service_0oddyfj", templateID, emailData, "pz6AHzoAuT68b19Ad")
-      .then(
-        (result) => {
-          alert("✅ Email sent successfully!");
-          console.log("✅ Email Sent:", result.text);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        (error) => {
-          alert("❌ Error sending email.");
-          console.error("❌ Email Error:", error.text);
-        }
-      );
-
-    setIsSubmitted(true)
+        body: JSON.stringify(payload),
+      });
+  
+      const data = await response.json();
+  
+      if (data.success) {
+        setResult("Form Submitted Successfully!");
+        setIsSubmitted(true);
+      } else {
+        setResult("Error: " + data.message);
+      }
+    } catch (error) {
+      setResult("Error submitting form.");
+    }
   };
+
   const handleClose = () => {
     setIsSubmitted(false);
     navigate("/"); // Navigate back to home route
